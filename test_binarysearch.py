@@ -4,6 +4,7 @@ import numpy as np
 from binarysearch import binary_search
 
 empty_list = []
+one_element_list = [9]
 sorted_num_list = list(range(15))
 combine_list = [3, 6, True, "combine", -2, "list"]
 '''
@@ -24,6 +25,13 @@ def test_notfound2():
 '''
 Phase 2 - Test different input
 '''
+def emptylist():
+	assert binary_search(empty_list, 6) == -1
+
+def oneelement():
+	assert binary_search(one_element_list, 9) == 1
+def oneelement2():
+	assert binary_search(one_element_list, 2) == -1
 
 
 '''
