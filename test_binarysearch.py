@@ -27,38 +27,41 @@ class MyTest(unittest.TestCase):
 		self.assertEqual(binary_search(sorted_num_list, 9.5), -1)
 
 	def test_notfound2(self):
+		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 8, 2, 7), -1)
 
 	'''
 	Phase 2 - Test different input
 	'''
-	def emptylist(self):
+	def empty_list(self):
 		empty_list = []
 		self.assertEqual(binary_search(empty_list, 6), -1)
 
-	def oneelement(self):
+	def one_element(self):
 		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 9), 0)
-	def oneelement2(self):
+	def one_element2(self):
 		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 2), -1)
 
-	def unsortedlist(self):
+	def unsorted_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 3), -1)
 
-	def combinelist(self):
+	def combine_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 6), -1)
 
 	'''
 	Phase 3 - Test Needles
 	'''
-	def needlelessthan():
+	def needle_lessthan():
+		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 4, 2, 14), 2)
 		self.assertEqual(binary_search(sorted_num_list, 1, 2, 14), -1)
 
-	def needlemorethan():
+	def needle_morethan():
+		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 12, 2, 10), -1)
 
 	'''
