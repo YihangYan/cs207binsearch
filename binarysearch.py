@@ -63,6 +63,7 @@ def binary_search(da_array: list, needle, left:int=0, right:int=-1) -> int:
     >>> binary_search(input, 5, 2, 2)
     -1
     """
+    
     if left==0:
         rangemin = 0
     else:
