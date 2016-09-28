@@ -46,7 +46,7 @@ class MyTest(unittest.TestCase):
 
 	def test_unsorted_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
-		self.assertEqual(binary_search(unsorted_num_list, 3), -1)
+		self.assertEqual(binary_search(unsorted_num_list, 3), 3)
 
 	def test_combine_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
@@ -55,12 +55,12 @@ class MyTest(unittest.TestCase):
 	'''
 	Phase 3 - Test Needles
 	'''
-	def test_needle_lessthan():
+	def test_needle_lessthan(self):
 		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 4, 2, 14), 2)
 		self.assertEqual(binary_search(sorted_num_list, 1, 2, 14), -1)
 
-	def test_needle_morethan():
+	def test_needle_morethan(self):
 		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 12, 2, 10), -1)
 
