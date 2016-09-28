@@ -15,7 +15,7 @@ def test_found():
 	assert binary_search(sorted_num_list, 2) == 2
 
 def test_found2():
-	assert binary_search(sorted_num_list, 6, 2, 7) == 6
+	assert binary_search(sorted_num_list, 6, 2, 7) == 5
 
 def test_notfound():
 	assert binary_search(sorted_num_list, 9.5) == -1
@@ -30,7 +30,7 @@ def emptylist():
 	assert binary_search(empty_list, 6) == -1
 
 def oneelement():
-	assert binary_search(one_element_list, 9) == 1
+	assert binary_search(one_element_list, 9) == 0
 def oneelement2():
 	assert binary_search(one_element_list, 2) == -1
 
@@ -43,7 +43,12 @@ def combinelist():
 '''
 Phase 3 - Test Needles
 '''
+def needlelessthan():
+	assert binary_search(sorted_num_list, 4, 2, 14) == 2
+	assert binary_search(sorted_num_list, 1, 2, 14) == -1
 
+def needlemorethan():
+	assert binary_search(sorted_num_list, 12, 2, 10) == -1
 
 '''
 Phase 4 - Integration of previous test
