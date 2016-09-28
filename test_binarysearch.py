@@ -57,7 +57,7 @@ class MyTest(unittest.TestCase):
 	'''
 	def test_needle_lessthan(self):
 		sorted_num_list = list(range(15))
-		self.assertEqual(binary_search(sorted_num_list, 4, 2, 14), 2)
+		self.assertEqual(binary_search(sorted_num_list, 4, 2, 14), 4)
 		self.assertEqual(binary_search(sorted_num_list, 1, 2, 14), -1)
 
 	def test_needle_morethan(self):
