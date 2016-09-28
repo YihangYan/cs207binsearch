@@ -33,34 +33,34 @@ class MyTest(unittest.TestCase):
 	'''
 	Phase 2 - Test different input
 	'''
-	def empty_list(self):
+	def test_emptylist(self):
 		empty_list = []
 		self.assertEqual(binary_search(empty_list, 6), -1)
 
-	def one_element(self):
+	def test_oneelement(self):
 		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 9), 0)
-	def one_element2(self):
+	def test_one_element2(self):
 		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 2), -1)
 
-	def unsorted_list(self):
+	def test_unsorted_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 3), -1)
 
-	def combine_list(self):
+	def test_combine_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 6), -1)
 
 	'''
 	Phase 3 - Test Needles
 	'''
-	def needle_lessthan():
+	def test_needle_lessthan():
 		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 4, 2, 14), 2)
 		self.assertEqual(binary_search(sorted_num_list, 1, 2, 14), -1)
 
-	def needle_morethan():
+	def test_needle_morethan():
 		sorted_num_list = list(range(15))
 		self.assertEqual(binary_search(sorted_num_list, 12, 2, 10), -1)
 
