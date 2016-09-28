@@ -5,42 +5,50 @@ from binarysearch import binary_search
 
 class MyTest(unittest.TestCase):
 
-	def testcase(self):
-		self.empty_list = []
-		self.one_element_list = [9]
-		self.sorted_num_list = list(range(15))
-		self.unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
-		self.combine_list = [3, 6, True, "combine", -2, "list"]
+	
+	# empty_list = []
+	# one_element_list = [9]
+	# sorted_num_list = list(range(15))
+	# unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
+	# combine_list = [3, 6, True, "combine", -2, "list"]
 	'''
 	Phase 1 - Simple test (interface illustration)
 	'''
 	def test_found(self):
-		self.assertEqual(binary_search(self.sorted_num_list, 2), 2)
+		sorted_num_list = list(range(15))
+		self.assertEqual(binary_search(sorted_num_list, 2), 2)
 
 	def test_found2(self):
-		self.assertEqual(binary_search(self.sorted_num_list, 6, 2, 7), 6)
+		sorted_num_list = list(range(15))
+		self.assertEqual(binary_search(sorted_num_list, 6, 2, 7), 6)
 
 	def test_notfound(self):
-		self.assertEqual(binary_search(self.sorted_num_list, 9.5), -1)
+		sorted_num_list = list(range(15))
+		self.assertEqual(binary_search(sorted_num_list, 9.5), -1)
 
 	def test_notfound2(self):
-		self.assertEqual(binary_search(self.sorted_num_list, 8, 2, 7), -1)
+		self.assertEqual(binary_search(sorted_num_list, 8, 2, 7), -1)
 
 	'''
 	Phase 2 - Test different input
 	'''
-	def emptylist():
+	def emptylist(self):
+		empty_list = []
 		self.assertEqual(binary_search(empty_list, 6), -1)
 
-	def oneelement():
+	def oneelement(self):
+		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 9), 0)
-	def oneelement2():
+	def oneelement2(self):
+		one_element_list = [9]
 		self.assertEqual(binary_search(one_element_list, 2), -1)
 
-	def unsortedlist():
+	def unsortedlist(self):
+		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 3), -1)
 
-	def combinelist():
+	def combinelist(self):
+		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 6), -1)
 
 	'''
