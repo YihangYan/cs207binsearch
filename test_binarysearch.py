@@ -51,6 +51,27 @@ class MyTest(unittest.TestCase):
 	def test_combine_list(self):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 6), -1)
+	#If it is there multiple times, we will return one of them: it is 
+	#not defined which, We are consistent by always returning an int, 
+	#choosing one which cannot be an index.
+
+	def test_multiple_same_elements(self):
+		multiple_same_elements = [8, 43, 7, 43, 9, 21, 40, 21]
+		self.assertEqual(binary_search(multiple_same_elements, 43), 2)
+		self.assertEqual(binary_search(multiple_same_elements, 21), 5)
+
+
+
+	#if we have a NaN in our array? Infty?
+	def test_nan_list(self):
+		nan_list = [2, 31, NaN, 7, 10]
+		self.assertEqual(binary_search(nan_list, 7), 3)
+
+	# what if da_array was not an array?
+
+	def test_not_array(self):
+		not_array = '1 3 e'
+		self.assertEqual(binary_search(nan_list, NaN), 2)
 
 	'''
 	Phase 3 - Test Needles
