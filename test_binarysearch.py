@@ -64,14 +64,14 @@ class MyTest(unittest.TestCase):
 
 	#if we have a NaN in our array? Infty?
 	def test_nan_list(self):
-		nan_list = [2, 31, NaN, 7, 10]
+		nan_list = [2, 31, '', 7, 10]
 		self.assertEqual(binary_search(nan_list, 7), 3)
 
 	# what if da_array was not an array?
 
 	def test_not_array(self):
-		not_array = '1 3 e'
-		self.assertEqual(binary_search(nan_list, NaN), 2)
+		not_array = '1 e 3'
+		self.assertEqual(binary_search(not_array, 3), -1)
 
 	'''
 	Phase 3 - Test Needles
