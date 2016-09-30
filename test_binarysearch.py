@@ -59,28 +59,17 @@ class MyTest(unittest.TestCase):
 	def test_nan_list(self):
 		nan_list = [2, 3, np.NaN, 7, 10]
 		self.assertEqual(binary_search(nan_list, 3), 2)
-		#self.assertEqual(binary_search(nan_list, 7,3,4), 3)
-		#self.assertEqual(binary_search(nan_list, 7), 2)
+		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
+		self.assertEqual(binary_search(nan_list, 7), 2)
 		#try:
 			#self.assertEqual(binary_search(nan_list, 7), 3)
 		#except:
 			#print("The array can't contain NaN")
-	def test_nan_list2(self):
-		nan_list = [2, 3, np.NaN, 7, 10]
-		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
-		#self.assertEqual(binary_search(nan_list, 7), 2)
-
-	def test_nan_list3(self):
-		nan_list = [2, 3, np.NaN, 7, 10]
-		self.assertEqual(binary_search(nan_list, 7), 2)
+	
 
 	def test_inifinity(self):
 		infty_list = [1, 2, np.inf, 5, 6]
 		self.assertEqual(binary_search(infty_list, 2), 1)
-		#self.assertEqual(binary_search(infty_list, 5), -1)
-
-	def test_inifinity2(self):
-		infty_list = [1, 2, np.inf, 5, 6]
 		self.assertEqual(binary_search(infty_list, 5), -1)
 
 
@@ -115,23 +104,20 @@ class MyTest(unittest.TestCase):
 	def test_nan_unsorted_list(self):
 		nan_list = [3, 2, np.NaN, 7, 10]
 		self.assertEqual(binary_search(nan_list, 2), 2)
-		#self.assertEqual(binary_search(nan_list, 7,3,4), 3)
-		#self.assertEqual(binary_search(nan_list, 7), 2)
+		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
+		self.assertEqual(binary_search(nan_list, 7), 2)
 		#try:
 			#self.assertEqual(binary_search(nan_list, 7), 3)
 		#except:
 			#print("The array can't contain NaN")
 
-	def test_nan_unsorted_list2(self):
-		nan_list = [3, 2, np.NaN, 7, 10]
-		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
-		#self.assertEqual(binary_search(nan_list, 7), 2)
 
-	def test_nan_unsorted_list3(self):
-		nan_list = [3, 2, np.NaN, 7, 10]
-		self.assertEqual(binary_search(nan_list, 7), 2)
 
-	#def 
+	# What if we have Infy in unsorted list?
+	def test_inifinity_unsorted(self):
+		infty_list = [3, 9, np.inf, 56, 6]
+		self.assertEqual(binary_search(infty_list, 9), 1)
+		self.assertEqual(binary_search(infty_list, 56, 3,4), 3)
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
 unittest.TextTestRunner().run(suite)
