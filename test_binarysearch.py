@@ -110,7 +110,7 @@ class MyTest(unittest.TestCase):
 
 	def test_combine_list(self):
 		unsorted_num_list = [2, 1, "meow", 19, 3, 57, 32, -4]
-		self.assertEqual(binary_search(unsorted_num_list, 19, 3, 5), 3)
+		self.assertEqual(binary_search(unsorted_num_list, 19, 3, 5), -1)
 		self.assertEqual(binary_search(unsorted_num_list, 1), 1)
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
