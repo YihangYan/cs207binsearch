@@ -95,6 +95,16 @@ class MyTest(unittest.TestCase):
 	Phase 4 - Integration of previous test
 	'''
 
+	def test_nan_unsorted_list(self):
+		nan_list = [3, 2, np.NaN, 7, 10]
+		self.assertEqual(binary_search(nan_list, 2), 1)
+		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
+		self.assertEqual(binary_search(nan_list, 7), 2)
+		#try:
+			#self.assertEqual(binary_search(nan_list, 7), 3)
+		#except:
+			#print("The array can't contain NaN")
+
 	#def 
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
