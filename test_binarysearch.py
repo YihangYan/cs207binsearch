@@ -43,10 +43,6 @@ class MyTest(unittest.TestCase):
 		unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 3), 3)
 
-	def test_combine_list(self):
-		unsorted_num_list = [2, "meow", 19, 3, 57, 32, -4]
-		self.assertEqual(binary_search(unsorted_num_list, 19), -1)
-		self.assertEqual(binary_search(unsorted_num_list, 19), 2)
 
 	#If it is there multiple times, we will return one of them: it is 
 	#not defined which, We are consistent by always returning an int, 
@@ -54,7 +50,6 @@ class MyTest(unittest.TestCase):
 	def test_multiple_same_elements(self):
 		multiple_same_elements = [8, 43, 7, 43, 9, 21, 40, 21]
 		self.assertEqual(binary_search(multiple_same_elements, 43), 3)
-		#self.assertEqual(binary_search(multiple_same_elements, 21), 5)
 
 
 	def test_nan_list(self):
@@ -62,10 +57,6 @@ class MyTest(unittest.TestCase):
 		self.assertEqual(binary_search(nan_list, 3), 2)
 		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
 		self.assertEqual(binary_search(nan_list, 7), 2)
-		#try:
-			#self.assertEqual(binary_search(nan_list, 7), 3)
-		#except:
-			#print("The array can't contain NaN")
 	
 
 	def test_inifinity(self):
@@ -107,11 +98,7 @@ class MyTest(unittest.TestCase):
 		self.assertEqual(binary_search(nan_list, 2), 2)
 		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
 		self.assertEqual(binary_search(nan_list, 7), 2)
-		#try:
-			#self.assertEqual(binary_search(nan_list, 7), 3)
-		#except:
-			#print("The array can't contain NaN")
-
+		
 
 
 	# What if we have Infy in unsorted list?
@@ -120,6 +107,12 @@ class MyTest(unittest.TestCase):
 		self.assertEqual(binary_search(infty_list, 9), 1)
 		self.assertEqual(binary_search(infty_list, 56, 3,4), 3)
 		self.assertEqual(binary_search(infty_list, 56), -1)
+
+	def test_combine_list(self):
+		unsorted_num_list = [2, 1, "meow", 19, 3, 57, 32, -4]
+		self.assertEqual(binary_search(unsorted_num_list, 19), -1)
+		self.assertEqual(binary_search(unsorted_num_list, 19, 3, 5), 3)
+		self.assertEqual(binary_search(unsorted_num_list, 1), 1)
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
 unittest.TextTestRunner().run(suite)
