@@ -94,7 +94,7 @@ class MyTest(unittest.TestCase):
 	Phase 4 - Integration of previous test
 	'''
 
-	def 
+	#def 
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
 unittest.TextTestRunner().run(suite)
