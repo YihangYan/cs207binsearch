@@ -60,6 +60,7 @@ class MyTest(unittest.TestCase):
 		nan_list = [2, 3, np.NaN, 7, 10]
 		self.assertEqual(binary_search(nan_list, 3), 2)
 		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
+		self.assertEqual(binary_search(nan_list, 7), 3)
 		try:
 			self.assertEqual(binary_search(nan_list, 7), 3)
 		except:
