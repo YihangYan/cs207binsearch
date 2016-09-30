@@ -46,6 +46,7 @@ class MyTest(unittest.TestCase):
 	def test_combine_list(self):
 		unsorted_num_list = [2, "meow", 19, 3, 57, 32, -4]
 		self.assertEqual(binary_search(unsorted_num_list, 19), -1)
+		self.assertEqual(binary_search(unsorted_num_list, 19), 2)
 
 	#If it is there multiple times, we will return one of them: it is 
 	#not defined which, We are consistent by always returning an int, 
