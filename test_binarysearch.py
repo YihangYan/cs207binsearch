@@ -118,6 +118,7 @@ class MyTest(unittest.TestCase):
 		infty_list = [3, 9, np.inf, 56, 6]
 		self.assertEqual(binary_search(infty_list, 9), 1)
 		self.assertEqual(binary_search(infty_list, 56, 3,4), 3)
+		self.assertEqual(binary_search(infty_list, 56), -1)
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
 unittest.TextTestRunner().run(suite)
