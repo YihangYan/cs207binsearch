@@ -6,11 +6,6 @@ from binarysearch import binary_search
 class MyTest(unittest.TestCase):
 
 	
-	# empty_list = []
-	# one_element_list = [9]
-	# sorted_num_list = list(range(15))
-	# unsorted_num_list = [2, 6, 19, 3, 57, 32, -4]
-	# combine_list = [3, 6, True, "combine", -2, "list"]
 	'''
 	Phase 1 - Simple test (interface illustration)
 	'''
@@ -62,7 +57,9 @@ class MyTest(unittest.TestCase):
 
 
 	def test_nan_list(self):
-		nan_list = [2, 31, np.NaN, 7, 10]
+		nan_list = [2, 3, np.NaN, 7, 10]
+		self.assertEqual(binary_search(nan_list, 3), 1)
+		self.assertEqual(binary_search(nan_list, 7,3,4), 3)
 		try:
 			self.assertEqual(binary_search(nan_list, 7), 3)
 		except:
@@ -96,6 +93,8 @@ class MyTest(unittest.TestCase):
 	'''
 	Phase 4 - Integration of previous test
 	'''
+
+	def 
 
 suite = unittest.TestLoader().loadTestsFromModule(MyTest())
 unittest.TextTestRunner().run(suite)
